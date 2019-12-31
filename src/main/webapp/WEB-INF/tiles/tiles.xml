@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+ 
+<tiles-definitions>
+ 
+    <!-- default tiles 설정 -->
+    <definition name="default" template="/WEB-INF/jsp/views/templates/default_template.jsp">
+        <put-attribute name="title"   value="/WEB-INF/jsp/views/layouts/default_layouts/title.jsp" />
+        <put-attribute name="left"   value="/WEB-INF/jsp/views/layouts/default_layouts/left.jsp" />
+        <put-attribute name="body"   value="/WEB-INF/jsp/views/layouts/default_layouts/body.jsp" />
+        <put-attribute name="top"   value="/WEB-INF/jsp/views/layouts/default_layouts/top.jsp" />
+        <put-attribute name="footer"   value="/WEB-INF/jsp/views/layouts/default_layouts/footer.jsp" />
+    </definition>
+    
+    <!-- body tiles 지정 -->
+     <definition name="/*" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/gtg/{1}.jsp" />
+    </definition>    
+
+    <definition name="/*/*" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/gtg/{1}/{2}.jsp" />
+    </definition>    
+
+    <definition name="/*/*/*" extends="default">
+        <put-attribute name="body" value="/WEB-INF/jsp/gtg/{1}/{2}/{3}.jsp" />
+    </definition>        
+    
+</tiles-definitions>

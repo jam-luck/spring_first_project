@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+
+    <typeAliases>
+        <!-- #################### 공통 #################### -->
+        <typeAlias alias="hashmap" type="java.util.HashMap"/>        
+        <!-- //#################### 공통 #################### -->
+		<!-- 로그인 세션[ login  ] -->
+		<!-- 메뉴 또는 액션별 등록 -->
+		<typeAlias alias="mainVO" type="com.fourker_s.gtg.main.vo.MainVO"/>
+    </typeAliases>
+</configuration>
