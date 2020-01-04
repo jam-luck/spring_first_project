@@ -37,4 +37,20 @@ public class MainController {
         LOGGER.debug(String.valueOf(vo) + "@@@@@@@@@@@");
 		return "/main/mainTest";
     }
+	@RequestMapping(value="/main/tt.do")
+	public String tt(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        LOGGER.debug("tt호출!");
+        
+        
+		return "/main/tt";
+    }
+	/*
+	@RequestMapping(value="/main/ttTest.do")
+	public String ttTest(Model model, MainVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        LOGGER.debug("ttTest 호출됨");
+        mainService.insertTest(vo); //이거말고 login에 메소드 만들어서 사용
+        LOGGER.debug(String.valueOf(vo) + "@@@@@@@@@@@");
+		return "/main/ttTest";
+    }
+    */
 }
