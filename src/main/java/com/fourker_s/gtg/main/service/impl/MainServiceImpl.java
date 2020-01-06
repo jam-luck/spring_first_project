@@ -23,7 +23,14 @@ public class MainServiceImpl implements MainService {
 	        MainVO mainvo = new MainVO();
 	        try{
 	            mainvo = mainDAO.insertTest(vo);
-	            LOGGER.info(mainvo + "@@@@-----insert");
+	            if(mainvo == null)
+	            {
+		            LOGGER.info(mainvo + "@@@@-----not found");
+	            }
+	            else
+	            {
+	            	LOGGER.info(mainvo + "@@@@-----find");
+	            }
 	        }catch(Exception ex){
 	            LOGGER.error("",ex);
 	        }

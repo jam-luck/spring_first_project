@@ -3,7 +3,7 @@
 <mapper namespace="com.fourker_s.gtg.main.dao.MainDAO">
 	<select id="insertTest" parameterType="mainVO" resultType="mainVO">
 		<![CDATA[
-		INSERT INTO PERSON (id, password) VALUES(#{id},#{password})
+		SELECT * FROM PERSON WHERE id = #{id} AND password = #{password}
 			]]>
 	</select>
 </mapper>

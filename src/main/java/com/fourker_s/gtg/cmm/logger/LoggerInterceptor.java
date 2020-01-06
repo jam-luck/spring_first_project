@@ -7,6 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import com.fourker_s.gtg.cmm.session.SessionManager;
+import com.fourker_s.gtg.login.vo.LoginVO;
 //인터셉터 전처리기, 후처리기 생성
 public class LoggerInterceptor extends HandlerInterceptorAdapter {
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoggerInterceptor.class);
