@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> hi! </h1>
+	<h1> 로그인완료 </h1>
 	<!--  
 	<form action="main/ttTest.do" method="post">
         아이디 : <input type="text" name="id" size"20"> <br />

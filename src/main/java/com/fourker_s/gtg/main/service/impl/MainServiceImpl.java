@@ -29,7 +29,7 @@ public class MainServiceImpl implements MainService {
 	            }
 	            else
 	            {
-	            	LOGGER.info(mainvo + "@@@@-----find");
+	            	LOGGER.info(mainvo + "@@@@-----found");
 	            }
 	        }catch(Exception ex){
 	            LOGGER.error("",ex);
