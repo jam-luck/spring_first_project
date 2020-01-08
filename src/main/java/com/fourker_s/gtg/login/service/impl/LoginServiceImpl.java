@@ -29,7 +29,7 @@ public class LoginServiceImpl implements LoginService{
 	            	LOGGER.info(loginvo + "@@@@-----found");
 	            }
 	        }catch(Exception ex){
-	            LOGGER.error("",ex);
+	            LOGGER.error("loginUser error",ex);
 	        }
 	        return loginvo;
 	    }

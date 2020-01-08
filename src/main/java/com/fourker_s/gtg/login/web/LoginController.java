@@ -20,7 +20,7 @@ public class LoginController {
 	
 	@RequestMapping(value="/main/loginFunction.do")
 	public String loginCheck(Model model, LoginVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        LOGGER.debug("»£√‚µ ");
+        LOGGER.debug("@ - loginfunction»£√‚µ ");
         LoginVO login = new LoginVO();
         int temp = 0;
         login = loginService.loginUser(vo);
