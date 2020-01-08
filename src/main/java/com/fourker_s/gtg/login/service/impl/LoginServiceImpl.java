@@ -6,10 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import com.fourker_s.gtg.login.service.LoginService;
 
-import com.fourker_s.gtg.login.service.LoginService;
 import com.fourker_s.gtg.login.dao.LoginDAO;
 import com.fourker_s.gtg.login.vo.LoginVO;
-import com.fourker_s.gtg.main.vo.MainVO;
 @Service("loginService")
 public class LoginServiceImpl implements LoginService{
 

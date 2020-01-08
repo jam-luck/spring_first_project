@@ -12,8 +12,7 @@
         아이디 : <input type="text" name="id" size"20"> <br />
         비밀번호 : <input type="password" name="password" size"20"><br />
         <input type="submit" value="테스트">
-        <br>
-		<input type="button" value="액션" onclick="location.href='main/tt.do'">
+
 </form>
 </body>
 </html>
