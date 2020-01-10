@@ -1,3 +1,4 @@
+
 package com.fourker_s.gtg.board.web;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -16,28 +17,12 @@ public class BoardController {
 	Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
 	@Resource(name="boardService")
 	BoardService boardService;
-}
-
-/*
-@Controller
-public class LoginController {
-	Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
-	@Resource(name="loginService")
-	LoginService loginService;
 	
-	@RequestMapping(value="/main/loginFunction.do")
-	public String loginCheck(Model model, LoginVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        LOGGER.debug("@ - loginfunction»£√‚µ ");
-        LoginVO login = new LoginVO();
-        int temp = 0;
-        login = loginService.loginUser(vo);
-        if(login != null) {
-        	SessionManager.setLoginInfo(request, login);
-        	temp = 1;
-        }
-        model.addAttribute("login", login);
-        model.addAttribute("temp", temp);
-		return "/main/loginFunction";
+	@RequestMapping(value="/board/boardMain.do")
+	public String boardMain(Model model, BoardVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        LOGGER.debug("∫∏µÂ∏ﬁ¿Œ»£√‚µ ");
+        model.addAttribute("boardList", boardService.showBoard(vo));
+        
+		return "/board/boardMain";
     }
 }
-*/

@@ -4,7 +4,7 @@ public class BoardVO {
 	String title;
 	String contents;
 	String writer;
-	String date;
+	String wdate;
 	int num;
 	public String getTitle() {
 		return title;
@@ -24,11 +24,11 @@ public class BoardVO {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public String getDate() {
-		return date;
+	public String getWdate() {
+		return wdate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setWdate(String wdate) {
+		this.wdate = wdate;
 	}
 	public int getNum() {
 		return num;
@@ -38,8 +38,9 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [title=" + title + ", contents=" + contents + ", writer=" + writer + ", date=" + date + ", num="
-				+ num + "]";
+		return "BoardVO [title=" + title + ", contents=" + contents + ", writer=" + writer + ", wdate=" + wdate
+				+ ", num=" + num + "]";
 	}
+
 
 }

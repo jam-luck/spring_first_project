@@ -5,7 +5,7 @@
 <script language="javascript">
 if(${temp} == 1) {
 	alert("로그인에 성공하셨습니다.");
-	document.location.href="loginMain.do";
+	document.location.href="../board/boardMain.do";
 }
 else {
 	alert("계정이나 비밀번호를 확인해주세요.");

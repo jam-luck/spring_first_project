@@ -12,8 +12,9 @@
         <typeAlias alias="hashmap" type="java.util.HashMap"/>        
         <!-- //#################### 공통 #################### -->
 		<!-- 로그인 세션[ login  ] -->
-		<!-- 메뉴 또는 액션별 등록 -->
+		<!-- 메뉴 또는 액션별 등록 #define 처럼 사용 뒤에 긴~~~주소를 alias로 짧게 사용 -->
 		<typeAlias alias="mainVO" type="com.fourker_s.gtg.main.vo.MainVO"/>
-		<typeAlias alias="loginVO" type="com.fourker_s.gtg.login.vo.LoginVO"/>    
+		<typeAlias alias="loginVO" type="com.fourker_s.gtg.login.vo.LoginVO"/>
+		<typeAlias alias="boardVO" type="com.fourker_s.gtg.board.vo.BoardVO"/>
     </typeAliases>
 </configuration>

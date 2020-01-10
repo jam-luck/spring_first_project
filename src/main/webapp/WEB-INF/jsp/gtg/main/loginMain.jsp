@@ -9,6 +9,6 @@
 <body>
 	<h1> 로그인완료 </h1>
     <br>
-	<input type="button" value="게시판" onclick="location.href='board/boardView.do'">
+	<input type="button" value="게시판" onclick="location.href='board/boardMain.do'">
 </body>
 </html>
