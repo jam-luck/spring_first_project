@@ -5,7 +5,7 @@
 	<select id="showBoard" parameterType="boardVO" resultType="boardVO">
 		SELECT * FROM BOARD
 	</select>
-	<select id="selectBoard" resultType="boardVO">
+	<select id="selectBoard" parameterType="pagingVO" resultType="boardVO">
 	SELECT * 
 		FROM (
 			SELECT ROWNUM RN, A.* 

@@ -16,5 +16,6 @@
 		<typeAlias alias="mainVO" type="com.fourker_s.gtg.main.vo.MainVO"/>
 		<typeAlias alias="loginVO" type="com.fourker_s.gtg.login.vo.LoginVO"/>
 		<typeAlias alias="boardVO" type="com.fourker_s.gtg.board.vo.BoardVO"/>
+		<typeAlias alias="pagingVO" type="com.fourker_s.gtg.board.vo.PagingVO"/>
     </typeAliases>
 </configuration>
