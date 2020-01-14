@@ -6,6 +6,7 @@ public class BoardVO {
 	String writer;
 	String wdate;
 	int num;
+	int count;
 	public String getTitle() {
 		return title;
 	}
@@ -36,11 +37,15 @@ public class BoardVO {
 	public void setNum(int num) {
 		this.num = num;
 	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 	@Override
 	public String toString() {
 		return "BoardVO [title=" + title + ", contents=" + contents + ", writer=" + writer + ", wdate=" + wdate
-				+ ", num=" + num + "]";
+				+ ", num=" + num + ", count=" + count + "]";
 	}
-
-
 }

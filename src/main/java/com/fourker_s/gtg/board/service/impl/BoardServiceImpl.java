@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.fourker_s.gtg.board.service.BoardService;
 import com.fourker_s.gtg.board.dao.BoardDAO;
 import com.fourker_s.gtg.board.vo.BoardVO;
+import com.fourker_s.gtg.board.vo.PagingVO;
 
 
 @Service("boardService")
@@ -20,12 +21,32 @@ public class BoardServiceImpl implements BoardService{
 	private BoardDAO boardDAO;
 	
 	public List<BoardVO> showBoard(BoardVO vo){
-		List<BoardVO> boardvo = null;
+		List<BoardVO> list = null;
 		try {
-			boardvo=boardDAO.showBoard(vo);
+			list=boardDAO.showBoard(vo);
 		}catch(Exception ex) {
-			LOGGER.error("리스트 에러",ex);
+			LOGGER.error("showBoard에러",ex);
 		}
-		return boardvo;
+		return list;
+	}
+	@Override
+	public List<BoardVO> selectBoard(PagingVO vo) {
+		return boardDAO.selectBoard(vo);
+	}
+ 
+	public int countBoard() {
+		return boardDAO.countBoard();
+	}
+	public BoardVO writeBoard(BoardVO vo)
+	{
+		BoardVO board = null;
+		try {
+			board=vo;
+			board.setNum(boardDAO.countBoard()+1);
+			board=boardDAO.writeBoard(vo);
+		}catch(Exception ex) {
+			LOGGER.error("writeBoard에러",ex);
+		}
+		return board;
 	}
 }

@@ -5,6 +5,25 @@
 	<select id="showBoard" parameterType="boardVO" resultType="boardVO">
 		SELECT * FROM BOARD
 	</select>
-	
+	<select id="selectBoard" resultType="boardVO">
+	SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM BOARD 
+						ORDER BY NUM DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+ 
+    <!-- 전체 게시글 수를 구하는 sql문 -->
+    <select id="countBoard" resultType="int">
+        SELECT COUNT(*) FROM BOARD
+    </select>
+    <select id="writeBoard" parameterType="boardVO" resultType="boardVO">
+        INSERT INTO BOARD(TITLE,CONTENTS,WRITER,WDATE,NUM,COUNT) VALUES(#{title},#{contents},#{writer},#{wdate},#{num},0)
+    </select>
 	
 </mapper>

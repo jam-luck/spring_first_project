@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@
 <script>
 	function selChange() {
 		var sel = document.getElementById('cntPerPage').value;
-		location.href="boardMain?nowPage=${paging.nowPage}&cntPerPage="+sel;
+		location.href="boardList?nowPage=${paging.nowPage}&cntPerPage="+sel;
 	}
 </script>
 <body>
@@ -56,19 +57,19 @@
 		</tr>
 		<c:forEach items="${viewAll }" var="list">
 			<tr>
-				<td>${list.num }</td>
-				<td>${list.title }</td>
-				<!--  <td><a href='detail?seq=${list.seq }'>${list.title }</a></td>-->
+				<td>${list.seq }</td>
+				<td><a href='detail?seq=${list.seq }'>${list.title }</a></td>
 				<td>${list.writer }</td>
-				<td><fmt:formatDate value="${list.wdate }" pattern="yyyy.MM.dd"/> </td>
+				<td><fmt:formatDate value="${list.regdate }" pattern="yyyy.MM.dd"/> </td>
+				<td>${list.cnt }</td>
 			</tr>
 		</c:forEach>
 	</table>
-	<!--  <input type="button" value="글쓰기" style="float: right;" onclick="location.href='/write'"><br>-->
+	<input type="button" value="글쓰기" style="float: right;" onclick="location.href='/write'"><br>
 	
 	<div style="display: block; text-align: center;">		
 		<c:if test="${paging.startPage != 1 }">
-			<a href="/boardMain?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+			<a href="/boardList?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
 		</c:if>
 		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
 			<c:choose>
@@ -76,12 +77,12 @@
 					<b>${p }</b>
 				</c:when>
 				<c:when test="${p != paging.nowPage }">
-					<a href="/boardMain?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+					<a href="/boardList?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
 				</c:when>
 			</c:choose>
 		</c:forEach>
 		<c:if test="${paging.endPage != paging.lastPage}">
-			<a href="/boardMain?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+			<a href="/boardList?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 		</c:if>
 	</div>
 </div>
