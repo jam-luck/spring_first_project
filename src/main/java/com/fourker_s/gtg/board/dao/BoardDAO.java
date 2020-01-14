@@ -13,5 +13,7 @@ public interface BoardDAO {
     // 전체 게시글 수 구하기
 	public int countBoard();
 	public BoardVO writeBoard(BoardVO vo);
+	public BoardVO viewBoard(BoardVO vo);	//특정 번호의 게시글 불러오기
+	public BoardVO viewCountUp(BoardVO vo);	//조회수 증가
 }
 

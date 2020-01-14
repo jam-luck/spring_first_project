@@ -25,5 +25,11 @@
     <select id="writeBoard" parameterType="boardVO" resultType="boardVO">
         INSERT INTO BOARD(TITLE,CONTENTS,WRITER,WDATE,NUM,COUNT) VALUES(#{title},#{contents},#{writer},#{wdate},#{num},0)
     </select>
-	
+	<select id="viewBoard" parameterType="boardVO" resultType="boardVO">
+        SELECT * FROM BOARD WHERE NUM=#{num}
+    </select>
+    <select id="viewCountUp" parameterType="boardVO" resultType="boardVO">
+        UPDATE BOARD SET COUNT = COUNT + 1 WHERE NUM = #{num}
+    </select>
+    
 </mapper>

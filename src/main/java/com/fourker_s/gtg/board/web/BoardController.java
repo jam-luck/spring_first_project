@@ -36,8 +36,8 @@ public class BoardController {
     }
     */
 	@RequestMapping(value="/board/boardPaging.do")
-	public String boardList(PagingVO vo, Model model, @RequestParam(value="nowPage", required=false)String nowPage, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
-		
+	public String boardList(PagingVO vo, Model model, @RequestParam(value="nowPage", required=false)String nowPage, @RequestParam(value="cntPerPage", required=false)String cntPerPage) 
+	{
 		int total = boardService.countBoard();
 		if (nowPage == null && cntPerPage == null) {
 			nowPage = "1";
@@ -47,10 +47,19 @@ public class BoardController {
 		} else if (cntPerPage == null) { 
 			cntPerPage = "10";
 		}
-		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));	//전체,페이지 계산
 		model.addAttribute("paging", vo);
 		model.addAttribute("viewAll", boardService.selectBoard(vo));
 		return "/board/boardPaging";
+	}
+	@RequestMapping(value="/board/boardView.do")
+	public String boardView(Model model, @RequestParam(value="boardNum")String boardNum) 
+	{
+		BoardVO target=new BoardVO();
+		target.setNum(Integer.parseInt(boardNum));
+		boardService.viewCountUp(target);
+		model.addAttribute("board",boardService.viewBoard(target));
+		return "/board/boardView";
 	}
 	@RequestMapping(value="/board/boardWrite.do")
 	public String write(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -66,12 +75,14 @@ public class BoardController {
 	     LOGGER.debug(vo.getTitle());
         LOGGER.debug(vo.getWriter());
 		vo.setCount(0);
+		//////작성날짜//////
 		Date from = new Date();
-		SimpleDateFormat fm = new SimpleDateFormat("yyyy.MM.dd");
+		SimpleDateFormat fm = new SimpleDateFormat("yyyy.MM.dd");	
 		String to = fm.format(from);
 		vo.setWdate(to);
         LOGGER.debug(vo.getWdate());
         boardService.writeBoard(vo);
 		return "/board/boardWriteFunction";
     }
+
 }

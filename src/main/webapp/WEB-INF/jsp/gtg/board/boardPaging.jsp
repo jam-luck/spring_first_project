@@ -45,7 +45,7 @@
 		<c:forEach items="${viewAll }" var="list">
 			<tr>
 				<td>${list.num }</td>
-				<td>${list.title }</td>
+				<td><a href="boardView.do?boardNum=${list.num}">${list.title }</td>
 				<td>${list.writer }</td>
 				<td>${list.wdate }</td>
 				<td>${list.count }</td>
@@ -55,7 +55,7 @@
 	
 	<div style="display: block; text-align: center;">		
 		<c:if test="${paging.startPage != 1 }">
-			<a href="boardPaging?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+			<a href="boardPaging.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
 		</c:if>
 		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
 			<c:choose>
@@ -63,12 +63,12 @@
 					<b>${p }</b>
 				</c:when>
 				<c:when test="${p != paging.nowPage }">
-					<a href="boardPaging?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+					<a href="boardPaging.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
 				</c:when>
 			</c:choose>
 		</c:forEach>
 		<c:if test="${paging.endPage != paging.lastPage}">
-			<a href="boardPaging?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+			<a href="boardPaging.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 		</c:if>
 	</div>
 	<input type="button" value="±Û¾²±â" onclick="location.href='boardWrite.do'">

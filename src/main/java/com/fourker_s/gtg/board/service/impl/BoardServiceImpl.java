@@ -49,4 +49,24 @@ public class BoardServiceImpl implements BoardService{
 		}
 		return board;
 	}
+	public BoardVO viewBoard(BoardVO vo)
+	{
+		BoardVO board = null;
+		try {
+			board=boardDAO.viewBoard(vo);
+		}catch(Exception ex) {
+			LOGGER.error("viewBoard에러",ex);
+		}
+		return board;
+	}
+	public BoardVO viewCountUp(BoardVO vo)
+	{
+		BoardVO board = null;
+		try {
+			board=boardDAO.viewCountUp(vo);
+		}catch(Exception ex) {
+			LOGGER.error("viewCountUp에러",ex);
+		}
+		return board;
+	}
 }
