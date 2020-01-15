@@ -30,6 +30,7 @@
 				<td>${board.count }</td>
 			</tr>
 	</table>
+	<input type="button" value="±Û»èÁ¦" onclick="location.href='boardDelete.do?boardNum=${board.num}'">
 </div>
 </body>
 </html>

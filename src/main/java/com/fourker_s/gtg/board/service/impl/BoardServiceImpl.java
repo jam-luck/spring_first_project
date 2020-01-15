@@ -69,4 +69,12 @@ public class BoardServiceImpl implements BoardService{
 		}
 		return board;
 	}
+	public void deleteBoard(BoardVO vo)
+	{
+		try {
+			boardDAO.deleteBoard(vo);
+		}catch(Exception ex) {
+			LOGGER.error("deleteBoardS¿¡·¯",ex);
+		}
+	}
 }

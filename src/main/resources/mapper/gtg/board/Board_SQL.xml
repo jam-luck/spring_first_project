@@ -28,6 +28,9 @@
 	<select id="viewBoard" parameterType="boardVO" resultType="boardVO">
         SELECT * FROM BOARD WHERE NUM=#{num}
     </select>
+        <select id="deleteBoard" parameterType="boardVO">
+        DELETE FROM BOARD WHERE NUM = #{num}
+    </select>
     <select id="viewCountUp" parameterType="boardVO" resultType="boardVO">
         UPDATE BOARD SET COUNT = COUNT + 1 WHERE NUM = #{num}
     </select>

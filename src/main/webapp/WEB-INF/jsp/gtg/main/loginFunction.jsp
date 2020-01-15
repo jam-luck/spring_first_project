@@ -7,7 +7,7 @@ if(${temp} == 1) {
 }
 else {
 	alert("계정이나 비밀번호를 확인해주세요.");
-	document.location.href="index.do";
+	document.location.href="../main/index.do";
 }
 </script>   
 <!DOCTYPE html>

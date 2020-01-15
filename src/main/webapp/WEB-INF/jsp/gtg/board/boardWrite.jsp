@@ -11,7 +11,7 @@
 	<form action="boardWriteFunction.do" method="post" id="writeform">
 	제목 : <input type="text" name="title"> <br>
 	내용: <textarea name="contents" form="writeform" cols="80" row="80"></textarea> <br>
-	<input type="submit">
+	<input type="submit" value="완료">
 	
 	</form>
 </body>

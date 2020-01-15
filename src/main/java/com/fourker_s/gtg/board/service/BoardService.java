@@ -10,4 +10,5 @@ public interface BoardService {
 	public BoardVO writeBoard(BoardVO vo);//게시글 쓰기
 	public BoardVO viewBoard(BoardVO vo);//해당번호의 게시글 보기
 	public BoardVO viewCountUp(BoardVO vo);//조회수 증가
+	public void deleteBoard(BoardVO vo);
 }

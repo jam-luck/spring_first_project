@@ -84,5 +84,25 @@ public class BoardController {
         boardService.writeBoard(vo);
 		return "/board/boardWriteFunction";
     }
+	@RequestMapping(value="/board/boardDelete.do")
+	public String delete(Model model, @RequestParam(value="boardNum")String boardNum, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        LOGGER.debug("boardDelete호출됨");
+		HttpSession httpSession = request.getSession(true);
+		LoginVO loginvo=(LoginVO)httpSession.getAttribute("loginvo");
+		BoardVO target=new BoardVO();
+		target.setNum(Integer.parseInt(boardNum));	//target = 해당번호의 게시글
+        LOGGER.debug("번호:"+Integer.toString(target.getNum()));
+		if(boardService.viewBoard(target).getWriter().equals(loginvo.getId()))// 게시글의 글쓴이와 로그인한 사용자와 같으면
+		{
+			boardService.deleteBoard(target);
+	        LOGGER.debug("삭제했다");
+			return "/board/boardDelete";
+		}
+		else
+		{
+	        LOGGER.debug("삭제못했다");
+			return "/board/boardDelete"; 
+		}
+    }
 
 }

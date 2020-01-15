@@ -15,5 +15,6 @@ public interface BoardDAO {
 	public BoardVO writeBoard(BoardVO vo);
 	public BoardVO viewBoard(BoardVO vo);	//특정 번호의 게시글 불러오기
 	public BoardVO viewCountUp(BoardVO vo);	//조회수 증가
+	public void deleteBoard(BoardVO vo);
 }
 
