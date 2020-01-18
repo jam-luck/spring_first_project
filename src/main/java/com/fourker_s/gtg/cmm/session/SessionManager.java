@@ -18,6 +18,12 @@ public class SessionManager {
             request.getSession().setMaxInactiveInterval(60*30);
         }
     }
+    public static void logout(HttpServletRequest request) {
+        HttpSession session = request.getSession(true);
+        if(session!=null) {
+        	request.getSession().removeAttribute("loginvo");
+        }
+    }
     /**
      * 세션에서 로그인정보를 가져온다.
      *

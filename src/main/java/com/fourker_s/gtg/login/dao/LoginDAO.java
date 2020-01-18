@@ -10,4 +10,5 @@ public interface LoginDAO {
 	public LoginVO checkUser(LoginVO vo);
 	
 	public LoginVO loginUser(LoginVO vo);
+	
 }

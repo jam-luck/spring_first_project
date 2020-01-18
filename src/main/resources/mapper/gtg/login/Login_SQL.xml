@@ -10,6 +10,17 @@
 		WHERE 
 			id = #{id} AND password = #{password} 
 	</select>
+	<select id="joinUser" parameterType="loginVO" resultType="loginVO">
+		INSERT INTO PERSON(id,password) VALUES(#{id},#{password})
+	</select>
+	<select id="checkUser" parameterType="loginVO" resultType="loginVO">
+		SELECT 
+			*
+		FROM 
+			person
+		WHERE 
+			id = #{id}
+	</select>
 	
 	
 </mapper>

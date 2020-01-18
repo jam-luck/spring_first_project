@@ -31,5 +31,43 @@ public class LoginServiceImpl implements LoginService{
 	        }
 	        return loginvo;
 	    }
+	 public LoginVO checkUser(LoginVO vo)
+	 {
+		 LoginVO loginvo = new LoginVO();
+		 
+	     try{
+	         loginvo = loginDAO.checkUser(vo);
+	         if(loginvo == null)
+	         {
+		         LOGGER.info(loginvo + "@@@@-----not found");
+	         }
+	         else
+	         {
+	        	 LOGGER.info(loginvo + "@@@@-----found");
+	         }
+	       }catch(Exception ex){
+	            LOGGER.error("checkUser error",ex);
+	       }
+	       return loginvo;
+	 }
+	 public LoginVO joinUser(LoginVO vo)
+	 {
+		 LoginVO loginvo = new LoginVO();
+		 
+	     try{
+	         loginvo = loginDAO.joinUser(vo);
+	         if(loginvo == null)
+	         {
+		         LOGGER.info(loginvo + "@@@@-----not found");
+	         }
+	         else
+	         {
+	        	 LOGGER.info(loginvo + "@@@@-----found");
+	         }
+	       }catch(Exception ex){
+	            LOGGER.error("joinUser error",ex);
+	       }
+	       return loginvo;
+	 }
 	
 }

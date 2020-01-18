@@ -32,4 +32,24 @@ public class LoginController {
         model.addAttribute("temp", temp);
 		return "/main/loginFunction";
     }
+	@RequestMapping(value="/main/logoutFunction.do")
+	public String loginOut(Model model,HttpServletRequest request, HttpServletResponse response) throws Exception {
+        LOGGER.debug("@ - logoutfunction»£√‚µ ");
+        SessionManager.logout(request);
+		return "/main/loginFunction";
+    }
+	@RequestMapping(value="/main/signUp.do")
+	public String signUp(Model model,HttpServletRequest request, HttpServletResponse response) throws Exception {
+        LOGGER.debug("@ - signUp»£√‚µ ");
+		return "/main/signUp";
+    }
+	@RequestMapping(value="/main/signUpFunction.do")
+	public String signUpFunction(Model model,LoginVO vo,HttpServletRequest request, HttpServletResponse response) throws Exception {
+        LOGGER.debug("@ - signUpFunc»£√‚µ ");
+        if(loginService.checkUser(vo)==null)
+        {
+        	loginService.joinUser(vo);
+        }
+		return "/main/signUpFunction";
+    }
 }
