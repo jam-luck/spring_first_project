@@ -93,7 +93,7 @@ public class KakaoLoginService {
             int responseCode = conn.getResponseCode();
             
                  
-            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
             
             String line = "";
             String result = "";
@@ -101,7 +101,6 @@ public class KakaoLoginService {
             while ((line = br.readLine()) != null) {
                 result += line;
             }
-            
             JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(result);
             String id = element.getAsJsonObject().get("id").getAsString();
