@@ -15,6 +15,7 @@
 		<!-- 메뉴 또는 액션별 등록 #define 처럼 사용 뒤에 긴~~~주소를 alias로 짧게 사용 -->
 		<typeAlias alias="mainVO" type="com.fourker_s.gtg.main.vo.MainVO"/>
 		<typeAlias alias="loginVO" type="com.fourker_s.gtg.login.vo.LoginVO"/>
+		<typeAlias alias="kakaoKeyVO" type="com.fourker_s.gtg.login.vo.KakaoKeyVO"/>
 		<typeAlias alias="boardVO" type="com.fourker_s.gtg.board.vo.BoardVO"/>
 		<typeAlias alias="pagingVO" type="com.fourker_s.gtg.board.vo.PagingVO"/>
     </typeAliases>

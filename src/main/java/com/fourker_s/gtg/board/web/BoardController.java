@@ -72,15 +72,12 @@ public class BoardController {
 		HttpSession httpSession = request.getSession(true);
 		LoginVO loginvo=(LoginVO)httpSession.getAttribute("loginvo");
 		vo.setWriter(loginvo.getId());	//아이디로 작성자 저장
-	     LOGGER.debug(vo.getTitle());
-        LOGGER.debug(vo.getWriter());
 		vo.setCount(0);
 		//////작성날짜//////
 		Date from = new Date();
 		SimpleDateFormat fm = new SimpleDateFormat("yyyy.MM.dd");	
 		String to = fm.format(from);
 		vo.setWdate(to);
-        LOGGER.debug(vo.getWdate());
         boardService.writeBoard(vo);
 		return "/board/boardWriteFunction";
     }

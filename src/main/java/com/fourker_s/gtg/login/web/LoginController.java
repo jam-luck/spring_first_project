@@ -1,4 +1,6 @@
 package com.fourker_s.gtg.login.web;
+import java.util.HashMap;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +19,7 @@ public class LoginController {
 	Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 	@Resource(name="loginService")
 	LoginService loginService;
-	
+
 	@RequestMapping(value="/main/loginFunction.do")
 	public String loginCheck(Model model, LoginVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
         LOGGER.debug("@ - loginfunction»£√‚µ ");
@@ -52,4 +54,7 @@ public class LoginController {
         }
 		return "/main/signUpFunction";
     }
+	 
+
+	 
 }
