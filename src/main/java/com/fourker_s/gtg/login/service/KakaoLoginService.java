@@ -108,8 +108,20 @@ public class KakaoLoginService {
             JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
             
             String nickname = properties.getAsJsonObject().get("nickname").getAsString();
+            
+            JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
+            boolean email_need=kakao_account.getAsJsonObject().get("email_needs_agreement").getAsBoolean();
             userInfo.put("id", id);
             userInfo.put("nickname", nickname);
+            if(email_need==false)
+            {
+            	String email = kakao_account.getAsJsonObject().get("email").getAsString();
+            	userInfo.put("email", email);
+            }
+            else
+            {
+            	//이메일 수집동의 추가할것
+            }
             br.close();
             
         } catch (IOException e) {

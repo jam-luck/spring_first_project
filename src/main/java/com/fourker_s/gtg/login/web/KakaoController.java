@@ -26,6 +26,7 @@ public class KakaoController {
         HashMap<String, Object> userInfo = kakaoLoginService.getUserInfo(access_Token);
         LOGGER.debug("정보="+userInfo.get("id"));
         LOGGER.debug("정보="+userInfo.get("nickname"));
+        LOGGER.debug("정보="+userInfo.get("email"));
 		return "/main/kakaoLogin";
 	}
 }
