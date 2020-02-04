@@ -48,8 +48,10 @@ public class LoginController {
 	@RequestMapping(value="/main/signUpFunction.do")
 	public String signUpFunction(Model model,LoginVO vo,HttpServletRequest request, HttpServletResponse response) throws Exception {
         LOGGER.debug("@ - signUpFunc호출됨");
+    	vo.setClf("1");	//일반회원
         if(loginService.checkUser(vo)==null)
         {
+
         	loginService.joinUser(vo);
         }
 		return "/main/signUpFunction";

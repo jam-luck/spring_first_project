@@ -14,7 +14,8 @@ public class LoginServiceImpl implements LoginService{
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoginServiceImpl.class);
 	@Resource(name="loginDAO")
 	private LoginDAO loginDAO;
-	 public LoginVO loginUser(LoginVO vo) {
+	 public LoginVO loginUser(LoginVO vo) 
+	 {
 	        LoginVO loginvo = new LoginVO();
 	        try{
 	            loginvo = loginDAO.loginUser(vo);
@@ -30,7 +31,7 @@ public class LoginServiceImpl implements LoginService{
 	            LOGGER.error("loginUser error",ex);
 	        }
 	        return loginvo;
-	    }
+	 }
 	 public LoginVO checkUser(LoginVO vo)
 	 {
 		 LoginVO loginvo = new LoginVO();
@@ -53,7 +54,6 @@ public class LoginServiceImpl implements LoginService{
 	 public LoginVO joinUser(LoginVO vo)
 	 {
 		 LoginVO loginvo = new LoginVO();
-		 
 	     try{
 	         loginvo = loginDAO.joinUser(vo);
 	         if(loginvo == null)
